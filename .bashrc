@@ -76,12 +76,14 @@ if [ "$TERM" != "dumb" ] && [ "$TERM" != "emacs" ] && [ -x /usr/bin/dircolors ];
     alias ls='ls -F --color=auto'
     alias grep='grep --color=auto'
     # fancy prompt
-    GREEN="\[\033[0;32m\]"
-    CYAN="\[\033[0;36m\]"
-    GRAY="\[\033[0;37m\]"
-    BLUE="\[\033[0;34m\]"
-    YELLOW="\[\033[0;33m\]"
-    NORMAL="\[\033[m"
+    GREEN="\e[32m"
+    CYAN="\e[36m"
+    GRAY="\e[37m"
+    BLUE="\e[34m"
+    YELLOW="\e[33m"
+    RED="\e[39m"
+    MAGENTA="\e[95m"
+    NORMAL="\e[39m"
     source ~/.git-prompt.sh
     #export PS1="${debian_chroot:+($debian_chroot)}${GREEN}\u${CYAN}@${BLUE}\h${CYAN}:${YELLOW}\w${NORMAL}\$(__git_ps1)\$\n "
     #export PS1="\[$GREEN\]\t\[$RED\]:\[$CYAN\]\u\[$YELLOW\]\[$YELLOW\]\w\[\033[m\]\[$MAGENTA\]\$(__git_ps1)\[$WHITE\]\$ "
