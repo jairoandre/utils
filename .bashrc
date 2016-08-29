@@ -12,7 +12,7 @@ export HISTCONTROL=ignoreboth
 shopt -s checkwinsize
 
 # "repeat" command.  Like:
-#	repeat 10 echo foo
+#   repeat 10 echo foo
 repeat (){ 
     local count="$1" i;
     shift;
@@ -27,8 +27,8 @@ function _gittar ()
     name=${name##*/}
 
     if [ ! "$1" ]; then
-	echo "[ERROR] what branch to export?"
-	return 1
+    echo "[ERROR] what branch to export?"
+    return 1
     fi
 
     local date=$(TZ=UTC date '+%Y%m%d.%H%M')
@@ -47,14 +47,14 @@ function _gittar ()
 # psgrep firef          # check if firefox is running...
 # pskill firef          # and kill it
 psgrep(){
-	ps aux | grep $1 | grep -v grep
+    ps aux | grep $1 | grep -v grep
 }
 pskill(){
-	local pid
-	pid=$(ps ax | grep $1 | grep -v grep | awk '{ print $1 }')
-	echo -n "killing $1 (process $pid)..."
-	kill -9 $pid
-	echo "slaughtered."
+    local pid
+    pid=$(ps ax | grep $1 | grep -v grep | awk '{ print $1 }')
+    echo -n "killing $1 (process $pid)..."
+    kill -9 $pid
+    echo "slaughtered."
 }
 
 # set variable identifying the chroot you work in (used in the prompt below)
@@ -112,13 +112,13 @@ alias texclean='rm -f *.toc *.aux *.lo[gft] *.d *.bbl *.blg *.cp *.fn *.tp *.vr 
 alias iso2utf='iconv -f iso-8859-1 -t utf-8'
 alias utf2iso='iconv -t iso-8859-1 -f utf-8'
 alias clean='echo -n "Really clean this directory?";
-	read yorn;
-	if test "$yorn" = "y"; then
-	   rm -f \#* *~ .*~ *.bak .*.bak  *.tmp .*.tmp core a.out;
-	   echo "Cleaned.";
-	else
-	   echo "Not cleaned.";
-	fi'
+    read yorn;
+    if test "$yorn" = "y"; then
+       rm -f \#* *~ .*~ *.bak .*.bak  *.tmp .*.tmp core a.out;
+       echo "Cleaned.";
+    else
+       echo "Not cleaned.";
+    fi'
 # and to keep your life happier!
 alias open='xdg-open'
 alias e='gvim -p'
@@ -133,7 +133,10 @@ export GOROOT=$HOME/go
 export GOOS=linux
 export GOARCH=386
 
+export JAVA_HOME=/c/Program\ Files/Java/jdk1.8.0_65/
 
+export OCI_LIB_DIR=/c/Oracle/instantclient/sdk/lib/msvc
+export OCI_INC_DIR=/c/Oracle/instantclient/sdk/include
 
 
 alias less='less -r'
@@ -157,5 +160,10 @@ alias gstop='sh ~/bin/glassfish4/glassfish/bin/asadmin stop-domain'
 alias wpserver='webpack-dev-server --host localhost --port 3000'
 alias lanceapi='cd ~/projects/lance/lance-api'
 alias lanceweb='cd ~/projects/lance/lance-web'
+alias lancedocs='cd ~/projects/lance/lance-docs'
 alias zuppainel='cd ~/projects/zup-painel'
+alias subl='/c/Program\ Files/Sublime\ Text\ 3/subl.exe'
+alias npm='~/AppData/Roaming/npm/npm'
+alias pip='/c/Python27/Scripts/pip'
+alias npmoff='npm --cache-min 9999999'
 cd ~
