@@ -23,7 +23,7 @@ if [ "$TERM" != "dumb" ] && [ "$TERM" != "emacs" ] && [ -x /usr/bin/dircolors ];
 
     source ~/.git-prompt.sh
 
-    export PS1="\[$GREEN\]\t\[$RED\]:\[$CYAN\]\u\[$YELLOW\]\[$YELLOW\]\w\[\033[m\]\[$MAGENTA\]\$(__git_ps1)\[$WHITE\]\n\$ "
+    export PS1="\[$GREEN\]\t\[$RED\]:\[$CYAN\]\u\[$YELLOW\]\[$YELLOW\]\w\[\033[m\]\[$MAGENTA\]\$(__git_ps1)\[$NORMAL\]\n\$ "
 
 fi
 
